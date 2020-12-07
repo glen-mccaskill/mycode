@@ -5,6 +5,8 @@ Learning to track my code
 One Paragraph of your project description goes here. Describe what you're trying to do.
 What is the purpose of putting up this repo?
 
+Version control step for github.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine
