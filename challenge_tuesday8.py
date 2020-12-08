@@ -7,7 +7,7 @@ dog_names.append(cat_names)
 print(dog_names[0])
 print(dog_names[3][1])
 
-critters = {"first_dog": "Tiny", "second_cat": "Mittens"}
+critters = {"first_dog": dogs[0], "second_cat": dogs[3][1]}
 print(critters)
 print(critters.values())
 
