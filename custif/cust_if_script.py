@@ -17,3 +17,13 @@ elif numscore >= 60:
     print("You need to study a LOT more. You made a D.")
 else:
     print("Repeat after me. 'Would you like fries with that?' You got an F.")
+
+# Another one for fun.
+ip = input("Please enter an IPv4 address: ")
+octets = len(ip.split("."))
+if octets == 4:
+    print("This appears to be a valid IP address.")
+elif octets > 4:
+    print("You have too many octets for this to be valid.")
+else:
+    print("you have too few octets for this to be valid.")
