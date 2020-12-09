@@ -7,6 +7,8 @@ print(numlist)
 easiest = "{} {} {} {} {} {} {}".format(*critters)
 print(easiest)
 
+print(" ".join(critters))
+
 for num in range(len(critters)):
     print(critters[num], end=" ")
 print()
