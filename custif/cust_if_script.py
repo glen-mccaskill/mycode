@@ -12,11 +12,11 @@ elif numscore >= 90:
 elif numscore >= 80:
     print("Not bad! You made a B.")
 elif numscore >= 70:
-    print("Is mediocre your middle name? You made a C.")
+    print("You made a C.")
 elif numscore >= 60:
     print("You need to study a LOT more. You made a D.")
 else:
-    print("Repeat after me. 'Would you like fries with that?' You got an F.")
+    print("Unfortunately, you failed.  You got an F.")
 
 # Another one for fun.
 ip = input("Please enter an IPv4 address: ")
