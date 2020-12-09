@@ -24,3 +24,14 @@ for stuff in range(len(farms)):         # getting the length of the list
         print(items, end=" ", flush=True)
     print()
     print()
+
+# Better way of doing the above as suggested by instructor with extras.
+for num, farm in enumerate(farms):
+    print(f"Farm #{num} is called {farm['name']} and has:")
+    for ag in farm['agriculture']:
+        print(f"    {ag}")
+
+for farm in farms:
+    print(f"Farm - {farm['name']} has:")
+    for ag in farm['agriculture']:
+        print(f"   {ag}")

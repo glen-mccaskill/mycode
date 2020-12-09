@@ -5,7 +5,7 @@ answer = " "
 
 while round < 3 and answer.lower() != "brian" and answer.lower() != "shrubbery":
     round += 1  # format to add what's right of += to the variable left of +=
-    answer = input ("Finish the movie title, 'Monty Python\'s The Life of _____'")
+    answer = input("Finish the movie title, 'Monty Python\'s The Life of _____'")
     if answer.lower() == "brian":
         print("Correct!")
     elif answer.lower() == "shrubbery":
