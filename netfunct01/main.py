@@ -10,10 +10,14 @@ def commandpush(devicecmd):     # devicecmd==list
         for mycmds in devicecmd[coffeetime]:
             print(Fore.GREEN + 'Attempting to sending command --> ' + mycmds )
             # we'll learn to write code that sends cmds to device here
+
+
+# function to echo IP list.
 def devicereboot(iplist):
     for ip in iplist:
         print(Fore.GREEN + "Connecting to...." + ip)
         print(Fore.RED + "REBOOTING NOW!" + Fore.GREEN)
+
 
 # start our main script
 def main():
@@ -32,5 +36,7 @@ def main():
     commandpush(work2do)    # call function to push commands to devices
     print()
     devicereboot(stuff)
+
+
 # call our main function
 main()
