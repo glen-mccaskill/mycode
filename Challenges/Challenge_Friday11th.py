@@ -10,9 +10,10 @@ def multiply(num):
 
 def adder(num1, num2):
     total = 0
-    for num in range(num1,num2 + 1):
+    for num in range(num1, num2 + 1):
         total = total + num
     print("Your total is: ", total)
+
 
 user = input("What is your name: ")
 howdy(user)
@@ -28,4 +29,3 @@ elif first < second:
     adder(first, second)
 else:
     print("You entered the same number twice, that won't work.")
-

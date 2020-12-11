@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+
+"""
+Script description.
+
+Author |
+License |
+"""
+
+# Python Standard Library
+import csv
+
+# 3rd Party Packages - Also should be listed in the requirements.txt file
+import requests
+
+
+# GLOBAL VARS
+DNS_SERVER = "8.8.8.8"
+
+
+# Classes
+class Kangaroo:
+    pass  # This is basically a place holder, but code can be added later.
+
+
+# Defining functions
+def add_22(num):
+    new_num = num + 22
+    return new_num
+
+
+# Define primary function
+def main():
+    this is the main program, and usually runs the other functions as needed.
+
+if __name__ == "__main__":
+    main()
