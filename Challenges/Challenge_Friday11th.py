@@ -8,10 +8,10 @@ def multiply(num):
     print(f"11.0 times {num} = {num * 11}")
 
 
-def adder(list):
+def adder(num1, num2):
     total = 0
-    for num in list:
-        total = total + list[num]
+    for num in range(num1,num2 + 1):
+        total = total + num
     print("Your total is: ", total)
 
 user = input("What is your name: ")
@@ -23,10 +23,9 @@ multiply(nums)
 first = int(input("Enter a number between 1 and 10: "))
 second = int(input("Enter a different number between 1 and 10: "))
 if first > second:
-    numlist = range[second, first,1]
+    adder(second, first)
 elif first < second:
-    numlist = range[first, second,1]
+    adder(first, second)
 else:
     print("You entered the same number twice, that won't work.")
 
-adder(numlist)
