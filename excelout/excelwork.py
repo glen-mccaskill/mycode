@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
-# pyexcel and pyexcel-xls installed using pip
+## sudo apt install python3-pip
 
+## python3 -m pip install pyexcel
+## python3 -m pip install pyexcel-xls
 import pyexcel
 
 # Request data from user
@@ -15,6 +17,7 @@ def get_ip_data():
 ## IP is the first column, whereas driver is the second column.
 ## mylistdict = [ {"IP": "172.16.2.10", "driver": "arista_eos"}] {"IP": "172.16.2.20", "driver": "arista_eos"} ]
 ## pyexcel.save_as(records=mylistdict, dest_file_name="ip_list.xls")
+
 
 # Runtime
 mylistdict = []  # this will be our list we turn into a *.xls file
