@@ -17,7 +17,7 @@ def list_reader(search):
     for names in search_file:
         # checks for a match of the possible user names and corresponding email addresses.
         if re.search(rf"^{search}", names):
-            print(search, names)
+            print(names)
 
 
 def main():

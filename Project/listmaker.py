@@ -19,7 +19,7 @@ for names in user_names:
         else:
             email_address = names + "@" + mails
         print(email_address)
-        print(email_address, file = listfile)
+        print(email_address, file=listfile)
 
 listfile.close()
 
