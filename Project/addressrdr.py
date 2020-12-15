@@ -3,7 +3,7 @@
 """
 This script reads email addresses and variations specified by the the user. Since many email addresses can end
 with multiple variations, only the search string entered by the user will be used all the way to the end of that
-address. Additionally, the file to be searched will be selected by the user.
+address. Additionally, the file to be searched can be selected by the user, or a default file will be used.
 """
 
 import re
@@ -12,6 +12,7 @@ import argparse
 
 def list_reader(search, where):
     howmany = 0
+    domainlist = []
     # opens file to be read from in read only mode
     search_file = open(where, "r")
     # reads through the file
@@ -22,10 +23,22 @@ def list_reader(search, where):
         if re.search(rf"^{search}", names):
             # this is a counter for matches.
             howmany += 1
+            userid, domain = names.rsplit("@")
+            domainlist.append(domain)
             print(names, end="")
 
     print()
-    print(f"This search returned {howmany} matches from {where}.")
+    print(f"This search returned {howmany} matches from the file {where}.")
+    domainlist.sort()
+
+    while len(domainlist) !=0:
+        test = domainlist[0]
+        test2 = domainlist.count(test)
+        print(f"{domainlist.count(test):3} were from {test}", end="")
+        del domainlist[0:test2]
+
+
+
 
 
 def main():
@@ -42,7 +55,9 @@ def main():
     # invoke the function with userid and filename.
     list_reader(user_name, file1)
 
-main()
+
+if __name__ == "__main__":
+    main()
 
 
 
