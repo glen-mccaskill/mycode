@@ -7,10 +7,20 @@ address. .
 """
 
 import re
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.parse_args()
+parser.add_argument("user", type=str, help="the userid to search for")
+# parser.add_argument("file", type=str, help="the filename to search")
+args = parser.parse_args()
+user_name = args.user
+# file1 = args.file
+
 
 def list_reader(search):
     # opens file to be read from
-    search_file = open("email_list.txt", "r")
+    search_file = open("email_list.txt" , "r")
     # reads through the file
     search_file = search_file.readlines()
     # iterates through file
@@ -21,7 +31,7 @@ def list_reader(search):
 
 
 def main():
-    user_name = input("Please enter the beginning of the user ids you'd like to search for: ")
+    #user_name = input("Please enter the beginning of the user ids you'd like to search for: ")
     list_reader(user_name)
 
 main()
