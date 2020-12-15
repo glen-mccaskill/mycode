@@ -10,29 +10,36 @@ import re
 import argparse
 
 
-
 def list_reader(search, where):
-    # opens file to be read from
-    search_file = open(where , "r")
+    howmany = 0
+    # opens file to be read from in read only mode
+    search_file = open(where, "r")
     # reads through the file
     search_file = search_file.readlines()
     # iterates through file
     for names in search_file:
         # checks for a match of the possible user names and corresponding email addresses.
         if re.search(rf"^{search}", names):
-            print(names)
+            # this is a counter for matches.
+            howmany += 1
+            print(names, end="")
+
+    print()
+    print(f"This search returned {howmany} matches from {where}.")
 
 
 def main():
+    # sets up argument parsing
     parser = argparse.ArgumentParser()
-    # creates the user argument - userid to be searched for
+    # userid to be searched for.
     parser.add_argument("user", type=str, help="the userid to search for")
-    # creates the file argument - file to be searched
-    parser.add_argument("file", type=str, help="the filename to search")
+    # file to be searched through.
+    parser.add_argument("--file", type=str, help="the filename to search", default="list.txt")
     args = parser.parse_args()
+    # assign variable to pass to function that will actually do the searching.
     user_name = args.user
     file1 = args.file
-    # pass user id and file to be searched.
+    # invoke the function with userid and filename.
     list_reader(user_name, file1)
 
 main()

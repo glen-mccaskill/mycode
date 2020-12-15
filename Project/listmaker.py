@@ -8,7 +8,7 @@ user_names = ["pgriffith", "stewieg", "bsimpson", "marges", "homer"]
 email_domains = ["hotmail.com", "gmail.com", "yahoo.com", "outlook.com", "mail.com"]
 
 
-listfile = open("email_list.txt", "a")
+listfile = open("list2.txt", "a")
 
 for names in user_names:
     for mails in email_domains:
