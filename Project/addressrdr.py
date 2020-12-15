@@ -3,24 +3,17 @@
 """
 This script reads email addresses and variations specified by the the user. Since many email addresses can end
 with multiple variations, only the search string entered by the user will be used all the way to the end of that
-address. .
+address. Additionally, the file to be searched will be selected by the user.
 """
 
 import re
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.parse_args()
-parser.add_argument("user", type=str, help="the userid to search for")
-# parser.add_argument("file", type=str, help="the filename to search")
-args = parser.parse_args()
-user_name = args.user
-# file1 = args.file
 
 
-def list_reader(search):
+def list_reader(search, where):
     # opens file to be read from
-    search_file = open("email_list.txt" , "r")
+    search_file = open(where , "r")
     # reads through the file
     search_file = search_file.readlines()
     # iterates through file
@@ -31,8 +24,16 @@ def list_reader(search):
 
 
 def main():
-    #user_name = input("Please enter the beginning of the user ids you'd like to search for: ")
-    list_reader(user_name)
+    parser = argparse.ArgumentParser()
+    # creates the user argument - userid to be searched for
+    parser.add_argument("user", type=str, help="the userid to search for")
+    # creates the file argument - file to be searched
+    parser.add_argument("file", type=str, help="the filename to search")
+    args = parser.parse_args()
+    user_name = args.user
+    file1 = args.file
+    # pass user id and file to be searched.
+    list_reader(user_name, file1)
 
 main()
 
