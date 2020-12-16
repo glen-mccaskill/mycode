@@ -33,7 +33,7 @@ def list_reader(search, where):
             print(names, end="")
 
     print()
-    print(f"This search returned {howmany} matches from the file {where}.")
+    print(f"This search returned {howmany} matches from the file: {where}")
 
     # sorting the list to put all identical domains together.
     domainlist.sort()
@@ -45,7 +45,7 @@ def list_reader(search, where):
         dom_count = domainlist.count(dom_name)
         # printing the number of occurrences of this domain with numbers aligned.
         print(f"{domainlist.count(dom_name):3} were from {dom_name}", end="")
-        # removing the domains from the list
+        # removing the listed domains from the list
         del domainlist[0:dom_count]
 
 
