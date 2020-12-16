@@ -45,7 +45,7 @@ def ping_router(hostname):
 ## Check interfaces - Issue "show ip init brief"
 def interface_check(dev_type, dev_ip, dev_un, dev_pw):
     try:
-        open_connection = ConnectHandler(device_type=dev_type, ip=dev_ip, \
+        open_connection = ConnectHandler(device_type=dev_type, ip=dev_ip,
           username=dev_un, password=dev_pw)
         my_command = open_connection.send_command("show ip int brief")       
     except:
