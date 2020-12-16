@@ -4,6 +4,8 @@
 This script reads email addresses and variations specified by the the user. Since many email addresses can end
 with multiple variations, only the search string entered by the user will be used all the way to the end of that
 address. Additionally, the file to be searched can be selected by the user, or a default file will be used.
+Author | Glen McCaskill
+License | GPL-3.0 License
 """
 
 import re
@@ -23,22 +25,28 @@ def list_reader(search, where):
         if re.search(rf"^{search}", names):
             # this is a counter for matches.
             howmany += 1
+            # splitting the userid from the domain at the @ sign
             userid, domain = names.rsplit("@")
+            # start building the list of domain occurrences.
             domainlist.append(domain)
+            # printing the complete email addresses that were obtained from the file
             print(names, end="")
 
     print()
     print(f"This search returned {howmany} matches from the file {where}.")
+
+    # sorting the list to put all identical domains together.
     domainlist.sort()
-
-    while len(domainlist) !=0:
-        test = domainlist[0]
-        test2 = domainlist.count(test)
-        print(f"{domainlist.count(test):3} were from {test}", end="")
-        del domainlist[0:test2]
-
-
-
+    # using a while loop to give a report on number of addresses from each domain.
+    while len(domainlist) != 0:
+        # obtaining the domain at index 0.
+        dom_name = domainlist[0]
+        # counting the number of identical domains.
+        dom_count = domainlist.count(dom_name)
+        # printing the number of occurrences of this domain with numbers aligned.
+        print(f"{domainlist.count(dom_name):3} were from {dom_name}", end="")
+        # removing the domains from the list
+        del domainlist[0:dom_count]
 
 
 def main():
@@ -52,13 +60,9 @@ def main():
     # assign variable to pass to function that will actually do the searching.
     user_name = args.user
     file1 = args.file
-    # invoke the function with userid and filename.
+    # invoke the function with userid and/or optional filename.
     list_reader(user_name, file1)
 
 
 if __name__ == "__main__":
     main()
-
-
-
-
