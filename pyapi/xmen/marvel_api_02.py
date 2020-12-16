@@ -55,7 +55,7 @@ if __name__ == '__main__':
       containing Marvel public developer key')
 
     ## The line below is NEW! This allows us to pass the lookup character
-    parser.add_argument('--hero', \
+    parser.add_argument('--hero',
                         help='Character to search for within the Marvel universe')
     args = parser.parse_args()
     main()
