@@ -1,0 +1,4 @@
+My single task ran
+My second task ran
+My rescue code ran. Maybe it undoes whatever the block tried to do
+This always runs. Maybe it is a commit, or an entry in a log

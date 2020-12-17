@@ -1,0 +1,24 @@
+- name: Error Handling in Ansible
+  hosts: localhost
+
+  tasks:
+  - name: Print message
+    debug:
+      msg: "Hello, I am {{ ansible_ssh_user }}!"
+
+  - name: fry saving block
+    block:
+
+    - name: Fry is a failure
+      fail:
+      when: ansible_ssh_user == "fry"
+
+    rescue:
+
+    -name: print out our sympathies
+     debug:
+       msg: "We still love you anyways, Fry"
+
+  - name: Print another message
+    debug:
+      msg: "Why yes, my name is {{ ansible_ssh_user }}"
