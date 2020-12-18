@@ -10,8 +10,8 @@ License | GPL-3.0 License
 
 import re
 import argparse
-import os.path
 from os import path
+
 
 def list_reader(search, where):
     howmany = 0
@@ -64,11 +64,10 @@ def main():
 
     # Checking that filename entered exists. If so execute the search module, otherwise inform user and end script.
     if path.exists(file1):
-        # invoke the function with userid and/or optional filename.
+        # invoke the function with userid and default or optional filename.
         list_reader(user_name, file1)
     else:
         print("That file does not exist. Try again with a valid filename.")
-
 
 
 if __name__ == "__main__":
