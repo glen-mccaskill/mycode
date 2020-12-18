@@ -55,7 +55,7 @@ def main():
     # userid to be searched for.
     parser.add_argument("user", type=str, help="the userid to search for")
     # file to be searched through.
-    parser.add_argument("--file", type=str, help="the filename to search", default="list.txt")
+    parser.add_argument("--file", type=str, help="the filename to search, or default file", default="list.txt")
     args = parser.parse_args()
     # assign variable to pass to function that will actually do the searching.
     user_name = args.user
