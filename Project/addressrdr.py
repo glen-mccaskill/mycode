@@ -10,7 +10,8 @@ License | GPL-3.0 License
 
 import re
 import argparse
-
+import os.path
+from os import path
 
 def list_reader(search, where):
     howmany = 0
@@ -60,8 +61,12 @@ def main():
     # assign variable to pass to function that will actually do the searching.
     user_name = args.user
     file1 = args.file
+    if not path.exists(file1):
+        print("That file does not exist. Try again with a valid filename.")
+        exit()
     # invoke the function with userid and/or optional filename.
     list_reader(user_name, file1)
+
 
 
 if __name__ == "__main__":
