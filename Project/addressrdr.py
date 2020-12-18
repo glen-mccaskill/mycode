@@ -61,12 +61,13 @@ def main():
     # assign variable to pass to function that will actually do the searching.
     user_name = args.user
     file1 = args.file
-    
-    if not path.exists(file1):
-        print("That file does not exist. Try again with a valid filename.")
-    else:
+
+    # Checking that filename entered exists. If so execute the search module, otherwise inform user and end script.
+    if path.exists(file1):
         # invoke the function with userid and/or optional filename.
         list_reader(user_name, file1)
+    else:
+        print("That file does not exist. Try again with a valid filename.")
 
 
 
