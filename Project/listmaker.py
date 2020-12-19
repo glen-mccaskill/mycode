@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import random
-import csv
 
 user_names = ["pgriffith", "stewieg", "bsimpson", "marges", "homer"]
 

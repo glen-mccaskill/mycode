@@ -12,8 +12,14 @@ import re
 import argparse
 from os import path
 
+"""
+This is a function that will open either a file chosen by the user, or a default if one isn't chosen. Then,
+it will go through the file looking for matches entered by the user. If a match is found, it will print the
+match to screen. Once it has searched the entire list, it will give a total of matches found followed by a
+report on the number found on each domain.
+"""
 
-def list_reader(search, where):
+def address_reader(search, where):
     howmany = 0
     domainlist = []
     # opens file to be read from in read only mode
@@ -49,6 +55,11 @@ def list_reader(search, where):
         # removing the listed domains from the list
         del domainlist[0:dom_count]
 
+"""
+This is the main function. It sets up argument parsing so the program can be ran from the command line while
+using arguments supplied by the user. Additionally, it checks if a valid file was entered. If that is good, it 
+passes the userid and filename to the address_reader function to generate a report.
+"""
 
 def main():
     # sets up argument parsing
@@ -65,7 +76,7 @@ def main():
     # Checking that filename entered exists. If so execute the search module, otherwise inform user and end script.
     if path.exists(file1):
         # invoke the function with userid and default or optional filename.
-        list_reader(user_name, file1)
+        address_reader(user_name, file1)
     else:
         print("That file does not exist. Try again with a valid filename.")
 
